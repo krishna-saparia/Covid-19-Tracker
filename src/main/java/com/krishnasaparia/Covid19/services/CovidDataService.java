@@ -21,10 +21,15 @@ public class CovidDataService {
     private static final String DataURL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
     private List<LocationState> allStats = new ArrayList<>();
 
+    public List<LocationState> getAllStats() {
+        return allStats;
+    }
+
     @PostConstruct
     @Scheduled(cron = "* * * 1 * * ")
     public void fetchCovidData() throws IOException, InterruptedException {
         List<LocationState> newStats = new ArrayList<>();
+
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(DataURL))
