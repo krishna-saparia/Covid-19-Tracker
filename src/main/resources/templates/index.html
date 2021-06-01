@@ -12,20 +12,20 @@
 <body>
 
 <!--<p th:text="#{testName}"></p>-->
-<h1>Covid-19 Cases Tracker</h1>
-<p>This application lists the current number of Covid cases acroos the globe</p>
-<div class="jumbotron jumbotron-fluid">
+<h1 class="d-flex justify-content-center">Covid-19 Cases Tracker</h1>
+<p class="d-flex justify-content-center">This application lists the current number of Covid cases across the globe</p>
+<div class="jumbotron jumbotron-fluid d-flex justify-content-center">
     <div class="container">
-        <h1 class="display-4" th:text="${totalReportedCases}"></h1>
-        <p class="lead"> Total cases reported as of today </p>
+        <strong><h1 class="display-4" th:text="${totalReportedCases}"/></strong>
+        <p class="lead"> Total cases reported as of today. </p>
         <hr class="my-4">
         <p>
             <span>New cases reported since Yesterday : </span>
-            <span th:text="${totalNewCases}"></span>
+            <strong><span th:text="${totalNewCases}"></span></strong>
         </p>
     </div>
 </div>
-<div class="container">
+<div class="container d-flex justify-content-center">
     <table class="table">
         <tr>
             <th scope="col">Country</th>
